@@ -14,10 +14,24 @@ body {
 input {
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
+  border-radius: 7px;
+  border: 1px solid #000000;
 }
 
 button {
   font-family: 'Poppins', sans-serif;
+  border-radius: 7px;
+  border: 1px solid #000000;
+  padding: 2px 20px 1px 20px;
+}
+
+#greet {
+  margin-top: 10vh;
+}
+
+img {
+  max-height: 500px;
+
 }
 
 .hidden {
