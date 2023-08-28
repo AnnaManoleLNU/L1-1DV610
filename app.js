@@ -5,7 +5,6 @@ const greeting = document.getElementById('greet')
 const anotherImage = document.getElementById('anotherImg')
 const anotherUser = document.getElementById('anotherUser')
 
-
 // Function to generate a random image from the Unsplash API
 async function generateImage() {
   // Get the image from the API
@@ -51,6 +50,21 @@ input.addEventListener('keypress', function (event) {
 // Event listener for button click
 button.addEventListener('click', function () {
   handleEvent() // Call the event handling function
+})
+
+// Event listener for another image button click
+anotherImage.addEventListener('click', async function () {
+  const imageDiv = document.getElementById('imagegoeshere')
+  
+  // Remove the current image
+  while (imageDiv.firstChild) {
+    imageDiv.removeChild(imageDiv.firstChild)
+  }
+  
+  // Generate and append a new image
+  const newImage = document.createElement('img')
+  newImage.src = await generateImage()
+  imageDiv.appendChild(newImage)
 })
 
 // Event listener for another user button click
