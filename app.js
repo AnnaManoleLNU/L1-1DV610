@@ -1,16 +1,17 @@
 const button = document.getElementById('btn')
-
-console.log(button)
+const input = document.getElementById('name')
+const greeting = document.getElementById('greet')
 
 button.addEventListener('click', () => {
-  console.log('Button clicked!')
-  const input = document.getElementById('name')
   // add the hidden class to the input and button
   input.classList.add('hidden')
   button.classList.add('hidden')
-
-  const greeting = document.getElementById('greet')
+  
+  // remove the hidden class from the greeting
   greeting.classList.remove('hidden')
-  greeting.innerHTML = `Hello ${input.value}!`
-
+  
+  // append the name to the greeting
+  const name = input.value
+  greeting.textContent += ` ${name}!`
+  
 })
