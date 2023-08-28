@@ -29,4 +29,4 @@ input.addEventListener('keypress', function (event) {
 // Event listener for button click
 button.addEventListener('click', function () {
   handleEvent() // Call the event handling function
-});
+})
