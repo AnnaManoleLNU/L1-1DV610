@@ -1,0 +1,25 @@
+{
+  "name": "l0-1dv610",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaManoleLNU/L0-1DV610.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaManoleLNU/L0-1DV610/issues"
+  },
+  "homepage": "https://github.com/AnnaManoleLNU/L0-1DV610#readme",
+  "devDependencies": {
+    "vite": "^2.3.8"
+  }
+}
