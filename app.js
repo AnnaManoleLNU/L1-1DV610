@@ -30,7 +30,7 @@ async function handleSubmitName() {
 
   // append the image to the div
   const image = document.createElement('img')
-  image.src = await generateImage()
+  image.src = await fetchImageFromUnsplash()
   const div = document.getElementById('unsplash-image')
   div.appendChild(image)
 
@@ -61,7 +61,7 @@ anotherImageButton.addEventListener('click', async function () {
 
   // Generate and append a new image
   const newImage = document.createElement('img')
-  newImage.src = await generateImage()
+  newImage.src = await fetchImageFromUnsplash()
   imageDiv.appendChild(newImage)
 })
 
