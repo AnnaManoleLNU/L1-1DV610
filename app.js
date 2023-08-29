@@ -9,8 +9,8 @@ const anotherUserButton = document.getElementById('another-user')
 
 // Function to generate a random image from the Unsplash API, return the URL.
 async function fetchImageFromUnsplash() {
-  // Get the image from the API, tagged with nature and 1920x1080 resolution.
-  const response = await fetch('https://source.unsplash.com/featured/1920x1080/?nature')
+  // Get the image from the API, tagged with flower and 1920x1080 resolution.
+  const response = await fetch('https://source.unsplash.com/featured/1920x1080/?flower')
   return response.url
 }
 
@@ -26,7 +26,7 @@ async function handleSubmitName() {
 
   // append the name to the greeting
   const name = nameInput.value
-  greeting.textContent += ` ${name}! Here is your image of the day!`
+  greeting.textContent += ` ${name}! Here, have a flower!`
 
   // append the image to the div
   const image = document.createElement('img')
