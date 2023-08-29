@@ -3,18 +3,19 @@ const welcomeMessage = document.getElementById('welcome-message')
 const nameInput = document.getElementById('name')
 const submitButton = document.getElementById('submit-button')
 const greeting = document.getElementById('greeting')
+const imageDiv = document.getElementById('unsplash-image')
 const anotherImageButton = document.getElementById('another-image')
 const anotherUserButton = document.getElementById('another-user')
 
-// Function to generate a random image from the Unsplash API
-async function generateImage() {
+// Function to generate a random image from the Unsplash API, return the URL.
+async function fetchImageFromUnsplash() {
   // Get the image from the API, tagged with nature and 1920x1080 resolution.
   const response = await fetch('https://source.unsplash.com/featured/1920x1080/?nature')
   return response.url
 }
 
-// Function to handle the event
-async function handleEvent() {
+// Function to handle submission of the name input.
+async function handleSubmitName() {
   // add the hidden class to the message, name input, and button
   welcomeMessage.classList.add('hidden')
   nameInput.classList.add('hidden')
@@ -38,25 +39,22 @@ async function handleEvent() {
   anotherUserButton.classList.remove('hidden')
 }
 
-
-// Event listener for Enter key press
+// Event listener for Enter key press.
 nameInput.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
     event.preventDefault()
-    handleEvent() // Call the event handling function
+    handleSubmitName() // Call the event handling function
   }
 })
 
-// Event listener for button click
+// Event listener for button click.
 submitButton.addEventListener('click', function () {
-  handleEvent() // Call the event handling function
+  handleSubmitName() // Call the event handling function
 })
 
-// Event listener for another image button click
+// Event listener for another image button click.
 anotherImageButton.addEventListener('click', async function () {
-  const imageDiv = document.getElementById('unsplash-image')
-
-  // Remove the current image
+  // Remove the current image from the div if it exists.
   while (imageDiv.firstChild) {
     imageDiv.removeChild(imageDiv.firstChild)
   }
@@ -67,7 +65,7 @@ anotherImageButton.addEventListener('click', async function () {
   imageDiv.appendChild(newImage)
 })
 
-// Event listener for another user button click
+// Event listener for another user button click.
 anotherUserButton.addEventListener('click', function () {
   location.reload()
 })
